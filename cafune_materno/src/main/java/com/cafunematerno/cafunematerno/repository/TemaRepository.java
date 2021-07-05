@@ -8,15 +8,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.cafunematerno.cafunematerno.model.Grupos;
-import com.cafunematerno.cafunematerno.model.Usuarios;
+import com.cafunematerno.cafunematerno.model.Temas;
+
 
 @Repository
-public interface GruposRepository extends JpaRepository<Grupos, Long> {
+public interface TemaRepository extends JpaRepository<Temas, Long> {
 	
-	public Optional<Object> findByNomeGrupo(String nomeGrupo);
+	public Optional<Object> findByNomeTema(String nomeTema);
 	
-	public List<Grupos> findAllByNomeGrupoContaining(String nomeGrupo);
+	public List<Temas> findAllByNomeTemaContaining(String nomeTema);
 	
 	//@Query(value= "SELECT * FROM db_cafune_materno.tb_grupos WHERE id_grupo = :id", nativeQuery = true)
 	//public List<Grupos> pegarOqueEuQuiser(@Param("id") Long id);

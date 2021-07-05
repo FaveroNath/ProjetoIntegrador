@@ -40,13 +40,6 @@ public class Usuarios {
 	
 	private String tipo; 
 	
-	@ManyToMany
-	@JsonIgnoreProperties({"listaParticipantes", "post"})
-	@JoinTable(
-			name = "tb_integra",
-			joinColumns = @JoinColumn (name = "fk_usuario"),
-			inverseJoinColumns = @JoinColumn (name = "fk_grupo"))
-	private List<Grupos> listaGrupos = new ArrayList<>();	
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"usuario"})
@@ -65,13 +58,6 @@ public class Usuarios {
 		this.postagens = postagens;
 	}
 
-	public List<Grupos> getListaGrupos() {
-		return listaGrupos;
-	}
-
-	public void setListaGrupos(List<Grupos> listaGrupos) {
-		this.listaGrupos = listaGrupos;
-	}
 
 	public Long getIdUsuario() {
 		return idUsuario;

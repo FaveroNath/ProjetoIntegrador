@@ -15,41 +15,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cafunematerno.cafunematerno.model.Grupos;
+import com.cafunematerno.cafunematerno.model.Temas;
 import com.cafunematerno.cafunematerno.model.Usuarios;
-import com.cafunematerno.cafunematerno.service.GruposService;
+import com.cafunematerno.cafunematerno.service.TemasService;
 
 @RestController
-@RequestMapping("/grupos")
+@RequestMapping("/temas")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class GruposController {
+public class TemaController {
 	
 	@Autowired
-	private GruposService serviceGrupos;
+	private TemasService serviceTemas;
 	
 
 	@GetMapping
-	public ResponseEntity<List<Grupos>> getAll(){
-		return serviceGrupos.pegarTodosGrupos();
+	public ResponseEntity<List<Temas>> getAll(){
+		return serviceTemas.pegarTodosTemas();
 	}
 	
-	@GetMapping("/id/{id_grupo}")
-	public ResponseEntity<Grupos> buscarGrupoPorId(@PathVariable(value = "id_grupo") Long idGrupo) {
-		return serviceGrupos.procurarIdGrupos(idGrupo);
+	@GetMapping("/id/{id_tema}")
+	public ResponseEntity<Temas> buscarTemaPorId(@PathVariable(value = "id_tema") Long idTema) {
+		return serviceTemas.procurarIdTemas(idTema);
 	}
 	
 	@PostMapping("/salvar/usuario/{id_usuario}")
-	public ResponseEntity<Usuarios> salvarNovoGrupo(@PathVariable(value = "id_usuario") Long idUsuario, @RequestBody Grupos novoGrupo) {
-		return serviceGrupos.salvarGrupos(idUsuario, novoGrupo);
+	public ResponseEntity<Temas> salvarNovoTema(@PathVariable(value = "id_usuario") Long idUsuario, @RequestBody Temas novoTema) {
+		return serviceTemas.salvarTemas(idUsuario, novoTema);
 	}
 	
-	@PutMapping("/atualizar/{id_grupo}")
-	public ResponseEntity<Grupos> alterarGrupo(@PathVariable (value = "id_grupo") Long idGrupo, @RequestBody Grupos grupoAtualizado) {
-		return serviceGrupos.atualizarGrupo(idGrupo, grupoAtualizado);
+	@PutMapping("/atualizar/{id_tema}")
+	public ResponseEntity<Temas> alterarTema(@PathVariable (value = "id_tema") Long idTema, @RequestBody Temas TemaAtualizado) {
+		return serviceTemas.atualizarTema(idTema, TemaAtualizado);
 	}
 	
 	@DeleteMapping("/deletar")
-	public ResponseEntity<String> deletarGrupoAtravesDoId(@RequestParam Long idGrupo) {
-		return serviceGrupos.deletarIdGrupo(idGrupo);
+	public ResponseEntity<String> deletarTemaAtravesDoId(@RequestParam Long idTema) {
+		return serviceTemas.deletarIdTema(idTema);
 	}
 }

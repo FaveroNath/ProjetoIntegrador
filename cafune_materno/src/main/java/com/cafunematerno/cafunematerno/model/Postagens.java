@@ -42,11 +42,11 @@ public class Postagens {
 
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JsonIgnoreProperties({"post", "usuario", "listaParticipantes"})
-	private Grupos grupoPertencente;
+	@JsonIgnoreProperties("post")
+	private Temas temaPertencente;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JsonIgnoreProperties({"postagens", "listaGrupos"})
+	@JsonIgnoreProperties("postagens")
 	private Usuarios usuario;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -64,12 +64,12 @@ public class Postagens {
 		this.usuario = usuario;
 	}
 
-	public Grupos getGrupoPertencente() {
-		return grupoPertencente;
+	public Temas getTemaPertencente() {
+		return temaPertencente;
 	}
 
-	public void setGrupoPertencente(Grupos grupoPertencente) {
-		this.grupoPertencente = grupoPertencente;
+	public void setTemaPertencente(Temas TemaPertencente) {
+		this.temaPertencente = TemaPertencente;
 	}
 
 	public Long getIdPostagem() {

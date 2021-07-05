@@ -114,7 +114,7 @@ public class UsuariosService {
 			String senhaCodificada = encoder.encode(usuarioParaAtualizar.getSenha());
 			usuarioExistente.setNomeCompleto(usuarioParaAtualizar.getNome());
 			usuarioExistente.setSenha(senhaCodificada);
-
+			usuarioExistente.setFoto(usuarioParaAtualizar.getFoto());
 			return ResponseEntity.status(202).body(usuariosRepository.save(usuarioExistente));
 		}).orElse(ResponseEntity.status(401).build());
 
@@ -160,7 +160,7 @@ public class UsuariosService {
 			return ResponseEntity.status(200).body(user);
 
 		} else {
-			return ResponseEntity.status(404).build();
+			return ResponseEntity.status(204).build();
 		}
 	}
 
