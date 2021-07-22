@@ -1,7 +1,7 @@
 ### Integrantes Grupo 2 - Cafuné Materno ❤️
 
-:green_heart: [Angelo R. Arcangelo](https://github.com/ArcangeloAR "GitHub")
-:purple_heart:  [Ellen P. Pimentel](https://github.com/Ellen-code "GitHub")
+:green_heart: [Angelo R. Arcangelo](https://github.com/ArcangeloAR "GitHub")  
+:purple_heart:  [Ellen P. Pimentel](https://github.com/Ellen-code "GitHub")  
 :blue_heart:  [Julio S. Santos](https://github.com/Julio-0417 "GitHub")  
 :black_heart:  [Luciano F. Nascimento](https://github.com/Lucianf5 "GitHub")  
 :white_heart:  [Nathalia F. Amorim](https://github.com/FaveroNath "GitHub")
